@@ -1,0 +1,58 @@
+<main>
+  <div class="container">
+    <h2 id="tituloInformacaoUnica">Informações Gerais</h2>
+    <table class="table mt-5">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Endereço</th>
+          <th scope="col">Tarifa</th>
+          <th scope="col">Forma de Pagamento</th>
+          <th scope="col">Quantidade de Vagas</th>
+          <th scope="col">Horário de Abertura</th>
+          <th scope="col">Horário de Fechamento</th>
+          <th scope="col">Status</th>
+          <th scope="col">ID do Usuário Registrado</th>
+          <th scope="col">Operações</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each estacionamentos}}
+          <tr>
+            <td>{{id}}</td>
+            <td>{{nome}}</td>
+            <td>{{endereco}}</td>
+            <td>{{tarifa}}</td>
+            <td>{{formaPagamento}}</td>
+            <td>{{quantidadeVagas}}</td>
+            <td>{{horarioAbertura}}</td>
+            <td>{{horarioFechamento}}</td>
+            <td>{{status}}</td>
+            <td>{{userId}}</td>
+            <td>
+              <div class="d-flex">
+                <form action="/estacionamento/remocaoEstacionamento/{{this.id}}" method="POST" class="me-2">
+                  <button type="submit" class="btn btn-danger" aria-label="Excluir estacionamento">
+                    Excluir
+                  </button>
+                </form>
+                <a href="/estacionamento/atualizarEstacionamento" class="btn btn-warning me-2" aria-label="Editar estacionamento">
+                  Editar
+                </a>
+                </form>
+                <a href="/" class="btn btn-secondary" aria-label="Voltar">
+                  Voltar
+                </a>
+              </div>
+            </td>
+          </tr>
+        {{else}}
+          <tr>
+            <td colspan="11" class="text-center">Nenhuma informação disponível.</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</main>

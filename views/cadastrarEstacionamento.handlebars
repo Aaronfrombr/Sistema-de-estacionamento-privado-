@@ -1,0 +1,29 @@
+<main>
+  <form action="/estacionamento/cadastrarEstacionamento" method="post">
+    <div class="container">
+      <div class="mb-3 my-3">
+        <label class="form-label" for="nome">Nome:</label>
+        <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome Completo" required>
+        
+        <label class="form-label" for="endereco">Endereço:</label>
+        <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Endereço" required>
+        
+        <label class="form-label" for="tarifa">Tarifa:</label>
+        <input type="number" class="form-control" id="tarifa" name="tarifa" placeholder="Tarifa" required>
+        
+        <label class="form-label" for="formaPagamento">Forma de Pagamento:</label>
+        <input type="text" class="form-control" id="formaPagamento" name="formaPagamento" placeholder="Forma de Pagamento" required>
+        
+        <label class="form-label" for="quantidadeVagas">Quantidade de Vagas:</label>
+        <input type="number" class="form-control" id="quantidadeVagas" name="quantidadeVagas" min="1" max="100" placeholder="Quantidade de Vagas" required>
+        
+        <label class="form-label" for="horarioAbertura">Horário de Abertura:</label>
+        <input type="time" class="form-control" id="horarioAbertura" name="horarioAbertura" placeholder="Horário de Abertura" required>
+        
+        <label class="form-label" for="horarioFechamento">Horário de Fechamento:</label>
+        <input type="time" class="form-control" id="horarioFechamento" name="horarioFechamento" placeholder="Horário de Fechamento" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </div>
+  </form>
+</main>

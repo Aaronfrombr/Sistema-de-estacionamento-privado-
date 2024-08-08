@@ -1,0 +1,44 @@
+<main>
+  <div class="container">
+    <h2 id="tituloRemocao">Remova Estacionamentos</h2>
+    {{#if caractEstacionamento.length}}
+      {{#each caractEstacionamento}}
+      <form action="/estacionamento/remocaoEstacionamento/{{this.id}}" method="post">
+        <table class="table mt-5">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Nome</th>
+              <th scope="col">Opções</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">{{this.id}}</th>
+              <td>
+                <a href="/estacionamento/informacoesDoEstacionamento/{{this.id}}">{{this.nome}}</a>
+              </td>
+              <td><button type="submit" class="btn btn-danger">Remover Estacionamento Privado</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+      {{/each}}
+    {{else}}
+    <table class="table mt-5">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Opções</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="3" class="text-center">Nenhum Estacionamento Registrado.</td>
+        </tr>
+      </tbody>
+    </table>
+    {{/if}}
+  </div>
+</main>

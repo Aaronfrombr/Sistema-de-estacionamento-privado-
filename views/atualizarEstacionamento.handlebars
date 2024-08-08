@@ -1,0 +1,36 @@
+<main>
+  <div class="container">
+    <label id="titleEst" class="form-label fs-3">Estacionamentos Criados</label>
+    {{#each caractEstacionamento}}
+    <form action="/estacionamento/atualizarEstacionamento/{{id}}" method="post">
+      <div class="container">
+        <div class="mb-3">
+          <div class="mb-3 my-3">
+            <label id="titulo" class="form-label">ID: {{id}}</label>
+            <br>
+            <label class="form-label">Nome:</label>
+            <input type="text" class="form-control" name="nomeAtt" value="{{nome}}" placeholder="Nome Completo" title="Apenas letras e espaços são permitidos.">
+            <label class="form-label">Endereço: </label>
+            <input type="text" class="form-control" name="enderecoAtt" value="{{endereco}}" placeholder="Endereço Completo" title="Apenas letras e espaços são permitidos.">
+            <label class="form-label">Tarifa:</label>
+            <input type="number" class="form-control" name="tarifaAtt" value="{{tarifa}}" placeholder="Tarifa" required>
+            <label class="form-label">Forma de Pagamento:</label>
+            <input type="text" class="form-control" name="formaAtt" value="{{formaPagamento}}" placeholder="Forma de Pagamento" title="Apenas letras e espaços são permitidos.">
+            <label class="form-label">Quantidade de Vagas:</label>
+            <input type="number" class="form-control" name="quantidadeAtt" value="{{quantidadeVagas}}" min="1" max="100" placeholder="Quantidade de Vagas" required>
+            <label class="form-label">Horário de Abertura:</label>
+            <input type="time" class="form-control" name="horarioAbAtt" value="{{horarioAbertura}}" placeholder="Horário de Abertura" required>
+            <label class="form-label">Horário de Fechamento:</label>
+            <input type="time" class="form-control" name="horarioFechAtt" value="{{horarioFechamento}}" placeholder="Horário de Fechamento" required>
+          </div>
+          <input type="submit" class="btn btn-primary" value="Atualizar"/>
+        </div>
+      </div>
+    </form>
+    {{else}}
+    <div class="container text-center">
+      <p id="zeroEstacionamento">Nenhum Estacionamento Registrado.</p>
+    </div>
+    {{/each}}
+  </div>
+</main>
